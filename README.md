@@ -1,1 +1,1 @@
-# FullStackJava-July2025-26
+# FullStackJava-July2025
