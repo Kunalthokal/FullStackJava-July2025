@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Clock</title>
 
-    <script>
-        function showTime()
-        {
-            let now=new Date()
-            document.getElementById('clock').innerHTML=now.toLocaleTimeString();
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        setInterval(showTime,1000);
-    </script>
+<script>
+    function showTime() {
+        let now = new Date();
+
+        let time = now.toLocaleTimeString();
+        let date = now.toDateString();
+
+        document.getElementById("clock").textContent = time;
+        document.getElementById("date").textContent = date;
+    }
+
+    setInterval(showTime, 1000);
+</script>
 </head>
-<body>
-    <div class="container">
-        <br><br>
-        <h1 class="display-5">Live Clock by JavaScript</h1>
-        <hr>
 
-        <span id="clock"></span>
+<body class="bg-dark text-light">
 
+<div class="container text-center mt-5">
+
+    <h1 class="display-5">Live Clock</h1>
+    <p class="lead">Current time updates every second.</p>
+
+    <hr>
+
+    <h2 id="clock" class="display-4 text-warning"></h2>
+    <h5 id="date" class="text-info"></h5>
+
+    <div class="mt-4">
+        <a href="index.html" class="btn btn-outline-light">
+            ← Back to Home
+        </a>
     </div>
-    
+
+</div>
+
+<script>
+    showTime();  // show immediately
+</script>
+
 </body>
 </html>
